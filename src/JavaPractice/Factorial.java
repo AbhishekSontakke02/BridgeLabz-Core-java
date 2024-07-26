@@ -3,42 +3,42 @@ package JavaPractice;
 import java.util.Scanner;
 
 public class Factorial{
-static Scanner sc = new Scanner(System.in);
-static int number; // Static Keyword
-public static void main(String[] args) {
 
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		factorialController();
+	}
+	
+	// Normal Function
+	private static void factorialController() {
+		int input =userInput();
+		int result=factorialOfNumber(input);
+		display(result);
+	}
+	// Function With Return Type
+	private static int userInput() {
+		System.out.print("Enter N :");
+		int number = sc.nextInt();
+		return number;
+	}
 
-userInput();
-int result=factorialOfNumber(number);
-display(result);
+	// Function with Parameter
+	private static void display(int result) {
+		sc.close();
+		System.out.println(result);
+	}
 
-}
-// Normal Function
-private static void userInput() {
-System.out.print("Enter N :");
-number = sc.nextInt();
+	// Function with Parameter and with return type.
+	private static int factorialOfNumber(int n) {
+		int temp = n;
+		int fact =1;
 
-}
-
-// Function with Parameter
-private static void display(int result) {
-System.out.println(result);
-}
-
-// Function with Parameter and with return type.
-private static int factorialOfNumber(int n) {
-int temp = n;
-int fact =1;
-
-while(temp!=0){
-fact = fact*temp;
-temp--;
-}
-return fact;
-
-// System.out.println("Factorial of number "+n +" is "+fact);
-// sc.close();
-
-}
+		while(temp!=0){
+			fact = fact*temp;
+			temp--;
+		}
+		return fact;
+	}
 
 }
