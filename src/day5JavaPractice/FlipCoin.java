@@ -1,32 +1,26 @@
 package day5JavaPractice;
 import java.util.Random;
 
-
 public class FlipCoin {
 	
 	public static void main(String[] args) {
-		
-		Random r = new Random();
-		double random = r.nextDouble();
-		
-		boolean result = flipCoin(random);
-		if (result) {
-			System.out.println("Tails");
-		}
-		if(!result) {
-			System.out.println("Head");
-		}
+		flipCoin(10);
 	}
 	
-	static boolean flipCoin(double random) {
-		if(random < 0.5) {
-			return true;
-		}
-		if(random >0.5) {
-			return false;
-		}
-		else {
-			return false;
-		}
+	static void flipCoin(int flips) {
+		int tails =0, heads =0;
+		Random r = new Random();
+        for (int i = 0; i < flips; i++) {
+            if (r.nextDouble() < 0.5) {
+                tails++;
+            } else {
+                heads++;
+            }
+        }
+        System.out.println("Percentage of Heads: " + (heads * 100.0 / flips) + "%");
+        System.out.println("Percentage of Tails: " + (tails * 100.0 / flips) + "%");
 	}
 }
+
+
+
