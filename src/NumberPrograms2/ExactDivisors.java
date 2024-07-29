@@ -24,15 +24,12 @@ public class ExactDivisors {
     public static int countDivisors(int number) {
         int divisorCount = 0;
 
-        for (int i = 1; i <= Math.sqrt(number); i++) {
+        for (int i = 1; i <= number; i++) {
             if (number % i == 0) {
-                if (i * i == number) {
-                    divisorCount++; // Perfect square
-                } else {
-                    divisorCount += 2; // i and number/i
-                }
+                    divisorCount++;
+                } 
             }
-        }
+        
 
         return divisorCount;
     }
