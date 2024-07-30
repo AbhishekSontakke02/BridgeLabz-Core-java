@@ -33,6 +33,7 @@ public class PerfectNumber {
 				factors.add(i);
 			}
 		}
+		System.out.println(factors);
 		return factors;
 	}
 }
